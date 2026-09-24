@@ -19,24 +19,25 @@
         }
 
         body {
-            background: #000;
-            color: #fff;
+            background: #000000;
+            color: #ffffff;
             min-height: 100vh;
         }
 
+        /* Background */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             background:
                 radial-gradient(
-                    circle at 20% 25%,
-                    rgba(212,175,55,0.13),
+                    circle at 20% 20%,
+                    rgba(212, 175, 55, 0.12),
                     transparent 30%
                 ),
                 radial-gradient(
-                    circle at 80% 70%,
-                    rgba(212,175,55,0.09),
+                    circle at 80% 80%,
+                    rgba(212, 175, 55, 0.08),
                     transparent 30%
                 );
             pointer-events: none;
@@ -46,14 +47,14 @@
         /* NAVBAR */
         .navbar {
             width: 100%;
-            padding: 22px 5%;
-            background: rgba(0,0,0,0.97);
+            padding: 20px 10px;
+            background: #000000;
             border-bottom: 1px solid #d4af37;
 
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 22px;
+            gap: 20px;
 
             position: sticky;
             top: 0;
@@ -62,7 +63,7 @@
 
         .logo-text {
             color: #d4af37;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: bold;
             letter-spacing: 4px;
             text-align: center;
@@ -71,44 +72,39 @@
         /* MENU */
         .menu {
             width: 100%;
-
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-
-            gap: 12px;
+            gap: 10px;
         }
 
         .menu button {
-            min-width: 150px;
-            padding: 14px 20px;
+            min-width: 140px;
+            padding: 13px 16px;
 
-            background: #000;
-            color: #fff;
+            background: #000000;
+            color: #ffffff;
 
             border: 2px solid #d4af37;
             border-radius: 12px;
 
-            font-size: 16px;
-            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
 
-            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .menu button:hover {
+        .menu button:active {
             background: #d4af37;
-            color: #000;
-            transform: translateY(-2px);
+            color: #000000;
         }
 
         /* SECTIONS */
         .section {
             display: none;
-
             min-height: 80vh;
-            padding: 70px 20px;
-
+            padding: 60px 20px;
             text-align: center;
         }
 
@@ -118,7 +114,7 @@
 
         /* HOME */
         .hero {
-            min-height: 75vh;
+            min-height: 70vh;
 
             display: flex;
             flex-direction: column;
@@ -129,65 +125,59 @@
             text-align: center;
         }
 
-        /* PHARMACY LOGO */
+        /*
+            LOGO
+            GitHub file name:
+            logo.jpeg.jpg
+        */
         .logo {
             display: block;
 
             width: 360px;
-            max-width: 85vw;
+            max-width: 90vw;
 
             height: auto;
 
-            margin: 0 auto 40px auto;
-
-            object-fit: contain;
+            margin: 0 auto 35px auto;
 
             border-radius: 20px;
+
+            object-fit: contain;
 
             filter:
                 drop-shadow(
                     0 0 15px
-                    rgba(212,175,55,0.35)
+                    rgba(212, 175, 55, 0.4)
                 );
-
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.03);
         }
 
         .hero h1 {
             color: #d4af37;
 
-            font-size: 48px;
+            font-size: 45px;
             font-weight: bold;
 
-            letter-spacing: 5px;
+            letter-spacing: 4px;
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .hero p {
             max-width: 650px;
 
-            color: #ddd;
+            color: #dddddd;
 
-            font-size: 20px;
+            font-size: 19px;
             line-height: 1.7;
-
-            padding: 0 15px;
         }
 
-        /* SECTION HEADINGS */
+        /* HEADINGS */
         .section h2 {
             color: #d4af37;
 
-            font-size: 36px;
+            font-size: 34px;
 
             margin-bottom: 30px;
-
-            letter-spacing: 1px;
         }
 
         /* CARDS */
@@ -199,63 +189,59 @@
 
             padding: 35px 25px;
 
-            background: rgba(15,15,15,0.95);
+            background: rgba(15, 15, 15, 0.95);
 
             border: 1px solid #d4af37;
-
             border-radius: 18px;
 
             box-shadow:
                 0 0 30px
-                rgba(212,175,55,0.08);
+                rgba(212, 175, 55, 0.08);
         }
 
         .card p {
-            color: #ddd;
+            color: #dddddd;
 
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.7;
 
             margin: 12px 0;
         }
 
-        /* ACTION BUTTONS */
+        /* ACTION BUTTON */
         .action-btn {
             display: inline-block;
 
             margin: 15px 5px 5px 5px;
 
-            padding: 15px 25px;
+            padding: 14px 22px;
 
             background: #d4af37;
-            color: #000;
+            color: #000000;
 
             border: 2px solid #d4af37;
-
             border-radius: 10px;
 
             text-decoration: none;
 
             font-size: 16px;
             font-weight: bold;
-
-            transition: all 0.3s ease;
         }
 
-        .action-btn:hover {
-            background: #000;
+        .action-btn:active {
+            background: #000000;
             color: #d4af37;
         }
 
         /* FOOTER */
         footer {
-            border-top: 1px solid #333;
+            border-top: 1px solid #333333;
 
             text-align: center;
 
-            padding: 28px 15px;
+            padding: 25px 15px;
 
-            color: #888;
+            color: #888888;
 
             font-size: 14px;
         }
@@ -264,24 +250,22 @@
         @media (max-width: 700px) {
 
             .navbar {
-                padding: 18px 10px;
-                gap: 18px;
+                padding: 18px 8px;
+                gap: 16px;
             }
 
             .logo-text {
-                font-size: 24px;
+                font-size: 23px;
                 letter-spacing: 3px;
             }
 
             .menu {
-                gap: 9px;
+                gap: 8px;
             }
 
             .menu button {
                 min-width: 135px;
-
-                padding: 12px 14px;
-
+                padding: 11px 12px;
                 font-size: 14px;
             }
 
@@ -289,21 +273,14 @@
                 padding: 45px 15px;
             }
 
-            .hero {
-                min-height: 75vh;
-            }
-
             .logo {
                 width: 320px;
-                max-width: 88vw;
-
-                margin-bottom: 35px;
-
-                border-radius: 18px;
+                max-width: 90vw;
+                margin-bottom: 30px;
             }
 
             .hero h1 {
-                font-size: 34px;
+                font-size: 32px;
                 letter-spacing: 3px;
             }
 
@@ -312,7 +289,7 @@
             }
 
             .section h2 {
-                font-size: 30px;
+                font-size: 29px;
             }
 
             .card p {
@@ -322,9 +299,13 @@
     </style>
 </head>
 
+
 <body>
 
+    <!-- ========================= -->
     <!-- NAVIGATION -->
+    <!-- ========================= -->
+
     <nav class="navbar">
 
         <div class="logo-text">
@@ -354,17 +335,19 @@
     </nav>
 
 
+    <!-- ========================= -->
     <!-- HOME -->
+    <!-- ========================= -->
+
     <section id="home" class="section active">
 
         <div class="hero">
 
-            <!-- YOUR GITHUB IMAGE -->
+            <!-- YOUR LOGO -->
             <img
-    src="https://raw.githubusercontent.com/h7hhjj74kd-afk/-rm-pharmacy-nfc/main/logo.jpeg.jpg"
-    alt="R M PHARMACY Logo"
-    class="logo"
->
+                class="logo"
+                src="logo.jpeg.jpg"
+                alt="R M PHARMACY Logo"
             >
 
             <h1>
@@ -380,7 +363,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- CONTACT -->
+    <!-- ========================= -->
+
     <section id="contact" class="section">
 
         <h2>
@@ -418,7 +404,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- WHATSAPP -->
+    <!-- ========================= -->
+
     <section id="whatsapp" class="section">
 
         <h2>
@@ -434,6 +423,7 @@
             <a
                 href="https://wa.me/919909004151"
                 target="_blank"
+                rel="noopener"
                 class="action-btn">
                 💬 Chat on WhatsApp
             </a>
@@ -443,7 +433,10 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- LOCATION -->
+    <!-- ========================= -->
+
     <section id="location" class="section">
 
         <h2>
@@ -465,6 +458,7 @@
             <a
                 href="https://www.google.com/maps/search/?api=1&query=Shop%209%2C%20Sarthak%20Serenity%2C%20Randesan%2C%20Gandhinagar%2C%20Gujarat"
                 target="_blank"
+                rel="noopener"
                 class="action-btn">
                 📍 Open in Google Maps
             </a>
@@ -474,13 +468,22 @@
     </section>
 
 
+    <!-- ========================= -->
     <!-- FOOTER -->
+    <!-- ========================= -->
+
     <footer>
-        © 2026 R M PHARMACY. All Rights Reserved.
+
+        © 2026 R M PHARMACY.
+        All Rights Reserved.
+
     </footer>
 
 
+    <!-- ========================= -->
     <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
     <script>
 
         function showSection(sectionId) {
@@ -494,9 +497,14 @@
 
             });
 
-            document
-                .getElementById(sectionId)
-                .classList.add("active");
+            const selectedSection =
+                document.getElementById(sectionId);
+
+            if (selectedSection) {
+
+                selectedSection.classList.add("active");
+
+            }
 
             window.scrollTo({
                 top: 0,
