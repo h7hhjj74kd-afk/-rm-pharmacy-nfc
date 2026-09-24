@@ -1,178 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>R M PHARMACY</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: #050505;
-      color: white;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 500px;
-      min-height: 100vh;
-      padding: 35px 22px;
-      text-align: center;
-      background: linear-gradient(180deg, #080808, #111111);
-    }
-
-    .logo {
-      width: 125px;
-      height: 125px;
-      border-radius: 50%;
-      border: 2px solid #d4af37;
-      margin: 10px auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .logo-text {
-      color: #d4af37;
-      font-size: 32px;
-      font-weight: bold;
-    }
-
-    h1 {
-      color: #d4af37;
-      font-size: 32px;
-      letter-spacing: 3px;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: #aaa;
-      font-size: 15px;
-      margin-bottom: 35px;
-    }
-
-    .card {
-      border: 1px solid #3b3118;
-      border-radius: 18px;
-      padding: 25px 18px;
-      background: #0d0d0d;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.08);
-    }
-
-    .card h2 {
-      color: #d4af37;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .card p {
-      color: #aaa;
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .button {
-      display: block;
-      text-decoration: none;
-      padding: 16px;
-      margin: 12px 0;
-      border-radius: 12px;
-      font-size: 17px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .call {
-      background: #d4af37;
-      color: #000;
-    }
-
-    .whatsapp {
-      background: #111;
-      color: #d4af37;
-      border: 1px solid #d4af37;
-    }
-
-    .button:active {
-      transform: scale(0.97);
-    }
-
-    .footer {
-      margin-top: 35px;
-      color: #666;
-      font-size: 12px;
-    }
-
-    .gold-line {
-      width: 70px;
-      height: 2px;
-      background: #d4af37;
-      margin: 15px auto 25px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R M PHARMACY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+        /* GOLD BACKGROUND EFFECT */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(212,175,55,0.12), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(212,175,55,0.08), transparent 30%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        /* NAVIGATION */
+        .navbar {
+            width: 100%;
+            padding: 18px 5%;
+            border-bottom: 1px solid #c9a227;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-text {
+            color: #d4af37;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .menu {
+            display: flex;
+            gap: 10px;
+        }
+        .menu button {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #d4af37;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        .menu button:hover {
+            background: #d4af37;
+            color: #000;
+        }
+        /* HERO */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .logo {
+            width: 180px;
+            max-width: 60%;
+            margin-bottom: 25px;
+            border-radius: 15px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #d4af37;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            color: #ddd;
+            font-size: 17px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        /* SECTIONS */
+        .section {
+            display: none;
+            min-height: 70vh;
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .section.active {
+            display: block;
+        }
+        .section h2 {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .card {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #d4af37;
+            border-radius: 15px;
+            padding: 30px;
+            background: rgba(20,20,20,0.9);
+            box-shadow: 0 0 25px rgba(212,175,55,0.08);
+        }
+        .card p {
+            margin: 12px 0;
+            color: #ddd;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        /* BUTTONS */
+        .action-btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 13px 22px;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .action-btn:hover {
+            background: #000;
+            color: #d4af37;
+        }
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #333;
+            text-align: center;
+            padding: 25px;
+            color: #888;
+            font-size: 14px;
+        }
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .menu button {
+                font-size: 13px;
+                padding: 9px 12px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-  <div class="container">
-
-    <div class="logo">
-      <div class="logo-text">RM</div>
-    </div>
-
-    <h1>R M PHARMACY</h1>
-
-    <div class="gold-line"></div>
-
-    <p class="subtitle">
-      Your trusted pharmacy
-    </p>
-
-    <div class="card">
-
-      <h2>Contact Us</h2>
-
-      <p>
-        For medicines and pharmacy enquiries
-      </p>
-
-      <a class="button call" href="tel:9909004151">
-        📞 Call 9909004151
-      </a>
-
-      <a class="button whatsapp"
-         href="https://wa.me/919909004151">
-        💬 WhatsApp 9909004151
-      </a>
-
-      <a class="button call" href="tel:7096004151">
-        📞 Call 7096004151
-      </a>
-
-      <a class="button whatsapp"
-         href="https://wa.me/917096004151">
-        💬 WhatsApp 7096004151
-      </a>
-
-    </div>
-
-    <div class="footer">
-      © 2026 R M PHARMACY
-    </div>
-
-  </div>
-
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo-text">
+            R M PHARMACY
+        </div>
+        <div class="menu">
+            <button onclick="showSection('home')">
+                🏥 R M PHARMACY
+            </button>
+            <button onclick="showSection('contact')">
+                📞 Contact
+            </button>
+            <button onclick="showSection('whatsapp')">
+                💬 WhatsApp
+            </button>
+            <button onclick="showSection('location')">
+                📍 Location
+            </button>
+        </div>
+    </nav>
+    <!-- HOME -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <!--
+            REPLACE "logo.png" WITH YOUR LOGO FILE NAME
+            Example: rm-pharmacy-logo.png
+            -->
+            <img src="logo.png" alt="R M PHARMACY Logo" class="logo">
+            <h1>R M PHARMACY</h1>
+            <p>
+                Your trusted pharmacy for everyday healthcare needs.
+            </p>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>📞 Contact Us</h2>
+        <div class="card">
+            <p><strong>R M PHARMACY</strong></p>
+            <p>📱 9909004151</p>
+            <p>📱 7096004151</p>
+            <a href="tel:9909004151" class="action-btn">
+                Call 9909004151
+            </a>
+            <a href="tel:7096004151" class="action-btn">
+                Call 7096004151
+            </a>
+        </div>
+    </section>
+    <!-- WHATSAPP -->
+    <section id="whatsapp" class="section">
+        <h2>💬 WhatsApp</h2>
+        <div class="card">
+            <p>
+                Contact R M PHARMACY directly on WhatsApp.
+            </p>
+            <a
+                href="https://wa.me/919909004151"
+                target="_blank"
+                class="action-btn">
+                Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+    <!-- LOCATION -->
+    <section id="location" class="section">
+        <h2>📍 Our Location</h2>
+        <div class="card">
+            <p><strong>R M PHARMACY</strong></p>
+            <p>
+                Shop 9, Sarthak Serenity,<br>
+                Randesan, Gandhinagar,<br>
+                Gujarat, India
+            </p>
+            <!--
+            This opens Google Maps search.
+            You can later replace this with your
+            exact Google Maps location link.
+            -->
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=R%20M%20PHARMACY%20Shop%209%20Sarthak%20Serenity%20Randesan%20Gandhinagar%20Gujarat"
+                target="_blank"
+                class="action-btn">
+                📍 Open in Google Maps
+            </a>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        © 2026 R M PHARMACY. All Rights Reserved.
+    </footer>
+    <!-- JAVASCRIPT -->
+    <script>
+        function showSection(sectionId) {
+            // Hide every section
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
