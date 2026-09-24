@@ -24,7 +24,6 @@
             min-height: 100vh;
         }
 
-        /* GOLD GLOW BACKGROUND */
         body::before {
             content: "";
             position: fixed;
@@ -44,10 +43,7 @@
             z-index: -1;
         }
 
-        /* =========================
-           TOP NAVIGATION
-        ========================== */
-
+        /* NAVBAR */
         .navbar {
             width: 100%;
             padding: 22px 5%;
@@ -72,12 +68,15 @@
             text-align: center;
         }
 
+        /* MENU */
         .menu {
             width: 100%;
+
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+
             gap: 12px;
         }
 
@@ -103,14 +102,13 @@
             transform: translateY(-2px);
         }
 
-        /* =========================
-           SECTIONS
-        ========================== */
-
+        /* SECTIONS */
         .section {
             display: none;
+
             min-height: 80vh;
             padding: 70px 20px;
+
             text-align: center;
         }
 
@@ -118,28 +116,26 @@
             display: block;
         }
 
-        /* =========================
-           HOME
-        ========================== */
-
+        /* HOME */
         .hero {
             min-height: 75vh;
 
             display: flex;
             flex-direction: column;
+
             justify-content: center;
             align-items: center;
 
             text-align: center;
         }
 
-        /* LARGE CENTERED LOGO */
-
+        /* PHARMACY LOGO */
         .logo {
             display: block;
 
             width: 360px;
             max-width: 85vw;
+
             height: auto;
 
             margin: 0 auto 40px auto;
@@ -149,7 +145,10 @@
             border-radius: 20px;
 
             filter:
-                drop-shadow(0 0 12px rgba(212,175,55,0.25));
+                drop-shadow(
+                    0 0 15px
+                    rgba(212,175,55,0.35)
+                );
 
             transition: transform 0.3s ease;
         }
@@ -180,10 +179,7 @@
             padding: 0 15px;
         }
 
-        /* =========================
-           OTHER SECTIONS
-        ========================== */
-
+        /* SECTION HEADINGS */
         .section h2 {
             color: #d4af37;
 
@@ -194,6 +190,7 @@
             letter-spacing: 1px;
         }
 
+        /* CARDS */
         .card {
             width: 100%;
             max-width: 650px;
@@ -205,10 +202,12 @@
             background: rgba(15,15,15,0.95);
 
             border: 1px solid #d4af37;
+
             border-radius: 18px;
 
             box-shadow:
-                0 0 30px rgba(212,175,55,0.08);
+                0 0 30px
+                rgba(212,175,55,0.08);
         }
 
         .card p {
@@ -220,10 +219,7 @@
             margin: 12px 0;
         }
 
-        /* =========================
-           ACTION BUTTON
-        ========================== */
-
+        /* ACTION BUTTONS */
         .action-btn {
             display: inline-block;
 
@@ -235,6 +231,7 @@
             color: #000;
 
             border: 2px solid #d4af37;
+
             border-radius: 10px;
 
             text-decoration: none;
@@ -250,10 +247,7 @@
             color: #d4af37;
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
-
+        /* FOOTER */
         footer {
             border-top: 1px solid #333;
 
@@ -266,10 +260,7 @@
             font-size: 14px;
         }
 
-        /* =========================
-           MOBILE
-        ========================== */
-
+        /* MOBILE */
         @media (max-width: 700px) {
 
             .navbar {
@@ -302,8 +293,6 @@
                 min-height: 75vh;
             }
 
-            /* LARGE MOBILE LOGO */
-
             .logo {
                 width: 320px;
                 max-width: 88vw;
@@ -335,10 +324,7 @@
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
+    <!-- NAVIGATION -->
     <nav class="navbar">
 
         <div class="logo-text">
@@ -368,27 +354,16 @@
     </nav>
 
 
-    <!-- =========================
-         HOME
-    ========================== -->
-
+    <!-- HOME -->
     <section id="home" class="section active">
 
         <div class="hero">
 
-            <!--
-            YOUR LOGO
-
-            IMPORTANT:
-            The filename below must exactly match
-            the filename in your GitHub repository.
-            -->
-
+            <!-- YOUR GITHUB IMAGE -->
             <img
-                src="logo.jpeg.jpg" 
-                alt="R M PHARMACY Logo" 
-                class="logo">
-            
+                src="logo.jpeg.jpg"
+                alt="R M PHARMACY Logo"
+                class="logo"
             >
 
             <h1>
@@ -404,13 +379,12 @@
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
+    <!-- CONTACT -->
     <section id="contact" class="section">
 
-        <h2>📞 Contact Us</h2>
+        <h2>
+            📞 Contact Us
+        </h2>
 
         <div class="card">
 
@@ -443,13 +417,12 @@
     </section>
 
 
-    <!-- =========================
-         WHATSAPP
-    ========================== -->
-
+    <!-- WHATSAPP -->
     <section id="whatsapp" class="section">
 
-        <h2>💬 WhatsApp</h2>
+        <h2>
+            💬 WhatsApp
+        </h2>
 
         <div class="card">
 
@@ -469,13 +442,12 @@
     </section>
 
 
-    <!-- =========================
-         LOCATION
-    ========================== -->
-
+    <!-- LOCATION -->
     <section id="location" class="section">
 
-        <h2>📍 Our Location</h2>
+        <h2>
+            📍 Our Location
+        </h2>
 
         <div class="card">
 
@@ -501,19 +473,13 @@
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
         © 2026 R M PHARMACY. All Rights Reserved.
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
+    <!-- JAVASCRIPT -->
     <script>
 
         function showSection(sectionId) {
@@ -535,6 +501,7 @@
                 top: 0,
                 behavior: "smooth"
             });
+
         }
 
     </script>
